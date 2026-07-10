@@ -1,0 +1,22 @@
+{
+  "available_scholarships": [
+    "Jharkhand e-Kalyan post-matric scholarship for eligible students through the official e-Kalyan portal.",
+    "National Scholarship Portal (NSP) schemes available through the Government of India portal.",
+    "Dumka Engineering College institutional scholarship information on its ongoing-admission page."
+  ],
+  "jharkhand_ekalyan": "Jharkhand e-Kalyan is managed by the Department of ST, SC, Minority and Backward Class Welfare. The official portal shows post-matric registrations for 2026-27 as open. Check eligibility on the portal before applying.",
+  "nsp_scholarship": "The National Scholarship Portal (NSP) is the Government of India portal for applying to and tracking eligible central and state scholarship schemes. Check the portal for schemes available to your category and course.",
+  "eligibility": "For e-Kalyan, use the portal's Check Eligibility option. For NSP and institutional scholarships, eligibility depends on the active scheme, category, academic record, income rules, and documents. Confirm the current criteria on the official portal or with the college.",
+  "application_process": [
+    "Check the institutional scholarship information on the official ongoing-admission page.",
+    "For Jharkhand e-Kalyan, use the official portal to check eligibility, register or log in with Aadhaar, select a scheme, enter student, academic, eligibility and bank details, then submit the form.",
+    "For NSP, register and apply through the official National Scholarship Portal for an eligible scheme.",
+    "Contact the college to confirm institute verification, documents, and the active scheme.",
+    "Submit your application using the official process before the stated deadline."
+  ],
+  "application_deadline": "No single scholarship deadline is published in this project data. Confirm the deadline for the active scheme with the college.",
+  "required_documents": [
+    "Confirm the document list for the selected scholarship scheme with the college.",
+    "Use only current requirements issued by the college or the relevant scholarship authority."
+  ]
+}

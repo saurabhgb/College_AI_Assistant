@@ -1,0 +1,1 @@
+"""Manual project demonstration scripts."""
