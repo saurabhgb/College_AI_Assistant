@@ -1,3 +1,4 @@
+from app import get_topic_badge_html
 from graph import college_assistant_graph
 
 
@@ -19,6 +20,17 @@ def test_unknown_question_returns_help_message():
     result = college_assistant_graph.invoke({"user_query": "Tell me a joke"})
     assert result["intent"] == "unknown"
     assert "admission" in result["final_response"].lower()
+
+
+def test_response_includes_a_labeled_source_note():
+    result = college_assistant_graph.invoke({"user_query": "What is the last date for admission?"})
+    assert "Source note:" in result["final_response"]
+
+
+def test_topic_badge_renders_a_human_readable_label():
+    badge = get_topic_badge_html("admission")
+    assert "Admission" in badge
+    assert "badge" in badge.lower()
 
 
 def test_ekalyan_question_routes_to_scholarship_agent():
