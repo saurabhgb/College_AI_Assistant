@@ -17,7 +17,7 @@ def get_topic_badge_html(topic: str) -> str:
     }
     label = labels.get(topic, "General")
     return (
-        f'<span class="badge" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.35rem 0.8rem;' \
+        f'<span class="badge" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.35rem 0.85rem;' \
         f'border-radius:999px;background:#e0f2fe;color:#1d4ed8;font-size:0.82rem;font-weight:700;' \
         f'letter-spacing:0.01em;">{label}</span>'
     )
@@ -34,84 +34,104 @@ st.markdown(
     <style>
     body {
         color: #0f172a;
-        background: linear-gradient(180deg, #f3f6ff 0%, #fbfbff 45%, #fdfbff 100%);
+        background: linear-gradient(180deg, #eff6ff 0%, #fbfbff 48%, #ffffff 100%);
     }
     .stApp {
         background: transparent;
     }
     .block-container {
-        padding-top: 1.2rem;
-        padding-bottom: 1.2rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.5rem;
     }
     .welcome-card {
-        border-radius: 30px;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.95);
-        border: 1px solid rgba(59, 130, 246, 0.18);
-        box-shadow: 0 26px 60px rgba(59, 130, 246, 0.08);
-        margin-bottom: 1.4rem;
+        border-radius: 32px;
+        padding: 1.8rem;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        box-shadow: 0 30px 80px rgba(59, 130, 246, 0.08);
+        margin-bottom: 1.6rem;
     }
     .welcome-card h1 {
         margin: 0;
-        font-size: 2.4rem;
-        letter-spacing: -0.04em;
+        font-size: 2.6rem;
+        letter-spacing: -0.05em;
     }
     .welcome-card p {
-        margin: 0.9rem 0 0;
+        margin: 1rem 0 0;
         color: #475569;
-        line-height: 1.8;
-        font-size: 1rem;
+        line-height: 1.85;
+        font-size: 1.03rem;
+    }
+    .feature-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 1rem;
+        color: #1e293b;
+        font-size: 0.95rem;
+        font-weight: 600;
+    }
+    .feature-pill span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 14px;
+        background: #eff6ff;
+        color: #2563eb;
+        font-size: 1.05rem;
     }
     .sidebar-block {
-        border-radius: 24px;
-        background: rgba(255, 255, 255, 0.92);
-        padding: 1rem 1rem 0.9rem;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.94);
+        padding: 1.15rem 1rem 1rem;
         margin-bottom: 1rem;
         border: 1px solid rgba(148, 163, 184, 0.18);
-        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05);
+        box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
     }
     .sidebar-block h3 {
         margin-bottom: 0.8rem;
     }
     .chat-card {
-        border-radius: 28px;
-        background: rgba(255, 255, 255, 0.96);
-        padding: 1.2rem;
-        box-shadow: 0 28px 65px rgba(15, 23, 42, 0.08);
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 1.4rem;
+        box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
     }
     .user-bubble,
     .assistant-bubble {
-        border-radius: 20px;
-        padding: 1rem 1rem;
-        margin-bottom: 0.9rem;
-        max-width: 88%;
+        border-radius: 24px;
+        padding: 1.1rem 1.2rem;
+        margin-bottom: 1rem;
+        max-width: 84%;
         line-height: 1.75;
         white-space: pre-wrap;
-        font-size: 0.98rem;
+        font-size: 1rem;
     }
     .user-bubble {
         background: #dbeafe;
         color: #0f172a;
         margin-left: auto;
-        border-top-right-radius: 6px;
+        border-top-right-radius: 10px;
     }
     .assistant-bubble {
         background: #eef2ff;
         color: #1e293b;
         margin-right: auto;
-        border-top-left-radius: 6px;
+        border-top-left-radius: 10px;
     }
     .typing-indicator {
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.45rem;
         color: #475569;
-        font-weight: 600;
-        margin-bottom: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
     }
     .typing-indicator span {
-        width: 0.37rem;
-        height: 0.37rem;
+        width: 0.38rem;
+        height: 0.38rem;
         border-radius: 50%;
         background: #1e293b;
         opacity: 0.45;
@@ -127,13 +147,21 @@ st.markdown(
         border-radius: 16px;
         border: none;
         box-shadow: 0 16px 30px rgba(59, 130, 246, 0.14);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        font-weight: 600;
     }
     .stButton>button:hover {
         transform: translateY(-1px);
     }
     .stTextInput>div>div>input {
-        border-radius: 18px;
+        border-radius: 22px;
+        background: rgba(241, 245, 249, 0.95);
+    }
+    .stTextInput>div>label {
+        color: #475569;
+    }
+    .stSidebar .css-18e3th9 {
+        padding-top: 0.8rem;
     }
     </style>
     """,
@@ -144,7 +172,10 @@ st.markdown(
     """
     <div class="welcome-card">
         <h1>🎓 Dumka Engineering College Assistant</h1>
-        <p>Ask about admissions, exams, fees, or scholarships and get crisp, college-focused answers instantly.</p>
+        <p>Get fast, verified answers for admissions, exams, fees, and scholarships at Dumka Engineering College.</p>
+        <div class="feature-pill">
+            <span>⚡</span> Verified knowledge from college data
+        </div>
     </div>
     """,
     unsafe_allow_html=True,
@@ -157,7 +188,7 @@ if "messages" not in st.session_state:
         {
             "role": "assistant",
             "content": (
-                "Welcome to your college assistant! Ask about admissions, exams, fees, or scholarships to get started."
+                "Welcome to the Dumka College Assistant! Ask your question below for a clear, data-backed answer."
             ),
         }
     )
@@ -248,3 +279,8 @@ with st.sidebar:
         st.session_state.messages = []
         st.session_state.pending_prompt = None
         st.session_state.recent_topics = []
+
+st.markdown(
+    '<div class="footer">Built for Dumka Engineering College students • Confirm time-sensitive details with official notices.</div>',
+    unsafe_allow_html=True,
+)
