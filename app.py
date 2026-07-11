@@ -227,7 +227,6 @@ with st.sidebar:
     ]:
         if st.button(prompt, use_container_width=True):
             st.session_state.pending_prompt = prompt
-            st.experimental_rerun()
     st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("<div class='sidebar-block'>", unsafe_allow_html=True)
@@ -249,4 +248,3 @@ with st.sidebar:
         st.session_state.messages = []
         st.session_state.pending_prompt = None
         st.session_state.recent_topics = []
-        st.experimental_rerun()
